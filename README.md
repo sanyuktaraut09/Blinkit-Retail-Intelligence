@@ -289,11 +289,4 @@ powerbi/Blinkit_Retail_Analytics.pbix
 
 **Sanyukta Raut**
 
-Electronics & Telecommunication Engineering  
-Minor in Artificial Intelligence
 
-**LinkedIn:** *(Add your profile link here)*
-
----
-
-### ⭐ If you found this project useful, consider giving it a star!
