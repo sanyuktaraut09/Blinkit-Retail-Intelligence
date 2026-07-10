@@ -2,7 +2,7 @@
 
 > **An end-to-end Retail Analytics project that transforms raw Blinkit sales data into actionable business insights using Python, MySQL, SQL, Power BI, and (upcoming) Apache Kafka for real-time data streaming.**
 
-![Dashboard](screenshots/dashboard_overview.png)
+
 
 ---
 
