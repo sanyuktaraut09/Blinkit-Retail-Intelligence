@@ -217,7 +217,7 @@ Example:
 ### Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/Blinkit-Retail-Intelligence.git
+git clone https://github.com/sanyuktaraut09/Blinkit-Retail-Intelligence.git
 ```
 
 ### Install Dependencies
