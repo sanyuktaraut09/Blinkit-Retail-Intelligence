@@ -1,74 +1,80 @@
-# 🛒 Blinkit Retail Intelligence 
+# 🛒 Blinkit Retail Intelligence with Real-Time Kafka Streaming
 
-> **An end-to-end Retail Analytics project that transforms raw Blinkit sales data into actionable business insights using Python, MySQL, SQL, Power BI, and (upcoming) Apache Kafka for real-time data streaming.**
+An end-to-end Retail Intelligence project that transforms raw Blinkit grocery sales data into actionable business insights using **Python, MySQL, SQL, Power BI, Apache Kafka, and Docker**.
 
-
-
----
-
-# 📌 Project Overview
-
-Retail businesses generate massive amounts of transactional data every day. This project demonstrates how raw retail data can be transformed into meaningful business insights through a complete analytics pipeline.
-
-The project covers the complete workflow from **data cleaning**, **feature engineering**, and **SQL analysis** to **interactive Power BI dashboards**, enabling data-driven decision-making for retail operations.
+The project demonstrates both **batch analytics** and **real-time streaming**, where retail sales are streamed using Apache Kafka and stored into MySQL for further analysis.
 
 ---
 
-# 🎯 Project Objectives
+# 🚀 Features
 
-- Clean and preprocess retail sales data.
-- Perform Exploratory Data Analysis (EDA).
-- Store processed data in MySQL.
-- Write business-focused SQL queries.
-- Build an executive Power BI dashboard.
-- Simulate real-time retail analytics using Apache Kafka *(In Progress)*.
+- ✅ Data Cleaning using Pandas
+- ✅ Exploratory Data Analysis (EDA)
+- ✅ Feature Engineering
+- ✅ MySQL Database Integration
+- ✅ 15+ Business SQL Queries
+- ✅ Interactive Power BI Dashboard
+- ✅ Apache Kafka Producer & Consumer
+- ✅ Dockerized Kafka Deployment
+- ✅ Real-Time Streaming into MySQL
 
 ---
 
 # 🏗️ Project Architecture
 
 ```text
-                    Blinkit Sales Dataset (.xlsx)
-                                │
-                                ▼
-                    Python Data Cleaning (Pandas)
-                                │
-                                ▼
-                    Feature Engineering & EDA
-                                │
-                                ▼
-                         MySQL Database
-                                │
-                   Business SQL Analysis
-                                │
-                                ▼
-                    Power BI Executive Dashboard
-                                │
-                                ▼
-                 Business Insights & Decision Making
-
-                (Upcoming)
-Python Producer → Apache Kafka → Python Consumer → MySQL
+                    Blinkit Retail Dataset
+                             │
+                             ▼
+              Data Cleaning & Feature Engineering
+                     (Python + Pandas)
+                             │
+                             ▼
+                     MySQL Database
+                             │
+                             ▼
+                 Business SQL Analysis
+                             │
+                             ▼
+                 Power BI Dashboard
+                             │
+──────────────────────────────────────────────────
+                Real-Time Streaming Layer
+──────────────────────────────────────────────────
+                             │
+                             ▼
+                  Kafka Producer (Python)
+                             │
+                             ▼
+             Apache Kafka (Docker Container)
+                             │
+                             ▼
+                  Kafka Consumer (Python)
+                             │
+                             ▼
+             MySQL Streaming Table
 ```
 
 ---
 
-# 🚀 Tech Stack
+# 🛠 Tech Stack
 
-| Category | Technologies |
-|----------|--------------|
-| Programming | Python |
-| Data Processing | Pandas, NumPy |
-| Database | MySQL |
-| Query Language | SQL |
-| Data Visualization | Power BI |
-| Notebook | Jupyter Notebook |
-| Version Control | Git, GitHub |
-| Streaming (Upcoming) | Apache Kafka |
+- Python
+- Pandas
+- NumPy
+- MySQL
+- SQLAlchemy
+- PyMySQL
+- SQL
+- Apache Kafka
+- Docker
+- Power BI
+- Git
+- GitHub
 
 ---
 
-# 📂 Project Structure
+# 📁 Project Structure
 
 ```text
 Blinkit-Retail-Intelligence
@@ -77,65 +83,45 @@ Blinkit-Retail-Intelligence
 │   ├── raw/
 │   └── cleaned/
 │
-├── database/
-│   └── load_to_mysql.py
-│
 ├── notebooks/
-│   ├── 01_data_cleaning.ipynb
-│   └── 02_eda.ipynb
-│
-├── powerbi/
-│   └── Blinkit_Retail_Analytics.pbix
-│
-├── screenshots/
-│   ├── dashboard_overview.png
-│   ├── filter_year.png
-│   ├── filter_outlet_size.png
-│   ├── filter_outlet_type.png
-│   ├── filter_location.png
-│   ├── category_analysis.png
-│   ├── sql_analysis.png
-│   └── eda_python.png
 │
 ├── sql/
-│   └── business_queries.sql
 │
+├── screenshots/
+│
+├── producer.py
+├── consumer.py
+├── load_to_mysql.py
 ├── requirements.txt
-├── README.md
-└── .gitignore
+└── README.md
 ```
 
 ---
 
 # 📊 Dashboard Features
 
-✔ Executive KPI Cards
-
-- Total Sales
-- Average Sales
-- Total Orders
-- Average Customer Rating
-
-✔ Interactive Visualizations
-
-- Sales Trend
-- Sales by Item Type
-- Outlet Performance
-- Outlet Size Analysis
-- Outlet Location Analysis
-- Category-wise Sales
-- Customer Rating Analysis
-
-✔ Interactive Filters
-
-- Outlet Type
-- Outlet Size
-- Outlet Location
-- Establishment Year
+- Executive KPI Dashboard
+- Sales Trend Analysis
+- Category-wise Sales Analysis
+- Outlet Performance Analysis
+- Interactive Filters
+- Business Insights
 
 ---
 
-# 📸 Dashboard Preview
+# ⚡ Kafka Streaming Workflow
+
+The project simulates a real-time retail environment.
+
+- Producer streams Blinkit sales records to Kafka.
+- Kafka acts as the messaging broker.
+- Consumer receives the streaming events.
+- Consumer inserts records into MySQL.
+- Streamed data can be queried for real-time analytics.
+
+---
+
+# 📷 Screenshots
 
 ## Executive Dashboard
 
@@ -143,145 +129,71 @@ Blinkit-Retail-Intelligence
 
 ---
 
-## Filter by Establishment Year
-
-![Year Filter](screenshots/filter_year.png)
-
----
-
-## Filter by Outlet Size
-
-![Outlet Size](screenshots/filter_outlet_size.png)
-
----
-
-## Filter by Outlet Type
-
-![Outlet Type](screenshots/filter_outlet_type.png)
-
----
-
-## Filter by Outlet Location
-
-![Location](screenshots/filter_location.png)
-
----
-
 ## Category Analysis
 
-![Category](screenshots/category_analysis.png)
+![Category Analysis](screenshots/category_analysis.png)
 
 ---
 
-# 🐍 Exploratory Data Analysis
+## SQL Analysis
 
-Python was used for data preprocessing and exploratory data analysis before loading the cleaned dataset into MySQL.
-
-Example visualization:
-
-![EDA](screenshots/eda_python.png)
+![SQL Analysis](screenshots/sql_analysis.png)
 
 ---
 
-# 🗄️ SQL Business Analysis
+## Interactive Dashboard Filter
 
-The project includes **15+ business-oriented SQL queries**, including:
-
-- Overall Business KPIs
-- Product Category Analysis
-- Outlet Performance
-- Customer Rating Analysis
-- Sales Contribution Analysis
-- Ranking using Window Functions
-- Running Sales Trend
-
-Example:
-
-![SQL](screenshots/sql_analysis.png)
+![Filter](screenshots/filter_year.png)
 
 ---
 
-# 📈 Key Business Insights
+## Kafka Producer
 
-- Identified the highest revenue-generating product categories.
-- Compared outlet performance across different outlet types.
-- Evaluated sales contribution by outlet size and location.
-- Measured customer satisfaction using average ratings.
-- Analyzed historical sales trends across establishment years.
-- Ranked product categories using SQL window functions.
+![Kafka Producer](screenshots/kafka_producer.png)
 
 ---
 
-# ⚙️ How to Run the Project
+## Kafka Consumer
 
-### Clone Repository
-
-```bash
-git clone https://github.com/sanyuktaraut09/Blinkit-Retail-Intelligence.git
-```
-
-### Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### Run Data Cleaning
-
-```bash
-python notebooks/01_data_cleaning.ipynb
-```
-
-### Load Data into MySQL
-
-```bash
-python database/load_to_mysql.py
-```
-
-### Execute SQL Queries
-
-Open MySQL Workbench and run:
-
-```
-sql/business_queries.sql
-```
-
-### Open Dashboard
-
-Launch:
-
-```
-powerbi/Blinkit_Retail_Analytics.pbix
-```
+![Kafka Consumer](screenshots/kafka_consumer.png)
 
 ---
 
-# 🔮 Future Enhancements
+## MySQL Streaming Table
 
-- Apache Kafka Streaming Pipeline
-- Real-Time Dashboard Refresh
-- Automated ETL Pipeline
-- Docker Deployment
-- Cloud Deployment (AWS/Azure)
-- Machine Learning-based Sales Forecasting
+![MySQL Stream](screenshots/mysql_stream_table.png)
 
 ---
 
-# ⭐ Project Highlights
+## Dockerized Kafka
 
-✔ End-to-End Analytics Pipeline
+![Docker Kafka](screenshots/docker_kafka.png)
 
-✔ Business-Oriented SQL Analysis
+---
 
-✔ Executive Power BI Dashboard
+# 💡 Business Insights
 
-✔ MySQL Database Integration
+- Analyze sales performance across product categories.
+- Compare outlet performance across locations.
+- Monitor inventory-related metrics.
+- Identify top-performing product segments.
+- Simulate real-time retail transaction ingestion.
 
-✔ Interactive Filtering & Drill-down
+---
 
-✔ Professional GitHub Documentation
+# 🎯 Learning Outcomes
 
-✔ Real-Time Streaming (Coming Soon)
+This project provided practical experience with:
+
+- Data Cleaning
+- Exploratory Data Analysis
+- SQL Query Writing
+- Power BI Dashboard Development
+- Apache Kafka
+- Docker
+- SQLAlchemy
+- Real-Time Data Streaming
+- Data Engineering Fundamentals
 
 ---
 
@@ -289,4 +201,4 @@ powerbi/Blinkit_Retail_Analytics.pbix
 
 **Sanyukta Raut**
 
-
+- GitHub: https://github.com/sanyuktaraut09
